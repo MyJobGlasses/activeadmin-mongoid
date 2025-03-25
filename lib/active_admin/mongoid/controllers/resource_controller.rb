@@ -1,4 +1,5 @@
 require 'active_admin/engine'
+require 'inherited_resources'
 
 ActiveAdmin::Engine.module_eval do
   initializer 'active_admin.mongoid.resource_controller' do

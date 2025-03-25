@@ -2,9 +2,12 @@ source 'https://rubygems.org'
 
 gemspec
 
+ruby '3.2.2'
+
 gem 'ransack-mongoid', git: 'https://github.com/activerecord-hackery/ransack-mongoid'
 
-gem 'rails', '>= 5.2', '< 6.1'
+gem 'rails', '7.2'
+gem 'inherited_resources'
 
 gem 'devise'
 
