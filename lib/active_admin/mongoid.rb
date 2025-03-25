@@ -21,6 +21,7 @@ require 'active_admin/mongoid/filters/resource_extension'
 require 'active_admin/mongoid/controllers/resource_controller'
 require 'active_admin/mongoid/resource/attributes'
 require 'active_admin/mongoid/csv_builder'
+require 'inherited_resources'
 
 module ActiveAdmin
   module Mongoid

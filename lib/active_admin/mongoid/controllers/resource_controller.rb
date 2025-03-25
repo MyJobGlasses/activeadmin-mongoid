@@ -1,15 +1,18 @@
 require 'active_admin/engine'
-require 'inherited_resources'
 
 ActiveAdmin::Engine.module_eval do
-  initializer 'active_admin.mongoid.resource_controller' do
-    class ActiveAdmin::ResourceController
-      def build_new_resource
-        scoped_collection.send(
-          method_for_build,
-          *resource_params
-        )
+  config.after_initialize do
+    if defined?(ActiveAdmin::ResourceController)
+      ActiveAdmin::ResourceController.class_eval do
+        def build_new_resource
+          scoped_collection.send(
+            method_for_build,
+            *resource_params
+          )
+        end
       end
+    else
+      warn "⚠️ ActiveAdmin::ResourceController is not loaded yet — skipping patch"
     end
   end
 end

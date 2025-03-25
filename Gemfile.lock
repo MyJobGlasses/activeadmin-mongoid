@@ -11,7 +11,7 @@ PATH
       activeadmin (>= 3.3)
       jquery-rails
       kaminari-mongoid
-      mongoid (>= 6.0, < 9.1)
+      mongoid (~> 8.0)
       sass-rails (>= 3.1.4)
 
 GEM
@@ -209,10 +209,11 @@ GEM
     minitest (5.25.5)
     mongo (2.21.0)
       bson (>= 4.14.1, < 6.0.0)
-    mongoid (9.0.6)
+    mongoid (8.1.10)
       activemodel (>= 5.1, < 8.1, != 7.0.0)
       concurrent-ruby (>= 1.0.5, < 2.0)
       mongo (>= 2.18.0, < 3.0.0)
+      ruby2_keywords (~> 0.0.5)
     net-imap (0.5.6)
       date
       net-protocol

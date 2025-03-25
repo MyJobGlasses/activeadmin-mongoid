@@ -2,14 +2,16 @@ require 'spec_helper'
 
 describe ActiveAdmin::Filters::FormBuilder do
   describe '#default_input_type' do
-    let(:instance) { described_class.new({}, {}, {}, {}) }
+    let(:template) { ActionView::Base.empty }
+    let(:object) { double('Object') }
+    let(:instance) { described_class.new(:search, object, template, {}) }
     let(:column) { double(:column) }
     subject { instance.default_input_type(nil) }
 
     before do
       allow(column).to receive_message_chain('type.name.downcase.to_sym')
         .and_return(column_symbol)
-      allow(instance).to receive(:column_for).with(anything).and_return(column)
+      allow(instance).to receive(:column_for).and_return(column)
     end
 
     context 'date_range' do
